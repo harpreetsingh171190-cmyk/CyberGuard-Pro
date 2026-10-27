@@ -1,0 +1,16 @@
+name: CyberGuard CI
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements-app.txt pytest
+      - run: python -m compileall -q app cyberguard_threat_intel.py manage_models.py monitor.py
+      - run: pytest -q
+      - run: docker build -t cyberguard:test .

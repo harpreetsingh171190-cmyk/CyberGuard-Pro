@@ -1,0 +1,8 @@
+stages:
+  dataset_audit:
+    cmd: python scripts/dataset_audit.py
+    deps:
+      - scripts/dataset_audit.py
+      - urls.csv
+    outs:
+      - reports/dataset_summary.json

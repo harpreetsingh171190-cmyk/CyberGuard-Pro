@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+*.sqlite3
+data/
+reports/*.pdf
+reports/*.json
+models/*/
+models/active.json
+phase1_artifacts/
+mlruns/
+*.joblib
+urls.csv
+.dvc/cache/
